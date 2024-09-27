@@ -15,9 +15,18 @@ from dotenv import load_dotenv, dotenv_values
 import time
 import keyboard
 import requests
+import sys
+
+if getattr(sys, 'frozen', False):
+    _path = os.path.join(sys._MEIPASS, 'Tesseract-OCR/tesseract.exe')
+    print(_path)
+    pytesseract.pytesseract.tesseract_cmd =_path
+else:
+    pytesseract.pytesseract.tesseract_cmd = r"C:\tresseract\\tesseract.exe"
 
 def similar(a, b):
     return SequenceMatcher(None, a, b).ratio()
+
 timer = 0
 extDataDir = os.getcwd()
 if getattr(sys, 'frozen', False):
