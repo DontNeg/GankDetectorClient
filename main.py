@@ -40,7 +40,7 @@ while True:
     text = re.sub(r'[^ \nA-Za-z/]+', '', pytesseract.image_to_string(img).replace(" ", "").lower())
     text = os.linesep.join([s for s in text.splitlines() if s])
     os.remove("./snapshot.jpg")
-    header = {'authorization': ''}
+    header = {'authorization': 'TOKEN_WAS_HERE'}
     request = requests.get(f'https://discord.com/api/v9/channels/1288958532099506186/messages', headers=header)
     thing = json.loads(request.text)
     clanlist = []
