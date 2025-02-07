@@ -1,1 +1,4 @@
-build/main/main.pkg
+build/
+.idea/
+dist/
+.venv/
